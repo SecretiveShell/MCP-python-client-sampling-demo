@@ -33,6 +33,8 @@ async def run():
             await session.initialize()
             print("Initialized")
 
+            print(f"{len((await session.list_tools()).tools)=}")
+
             # Create a sampling request
             resp = await session.call_tool(
                 name="sampleLLM",
